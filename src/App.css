@@ -16,6 +16,51 @@ a.navbar-brand {
   margin-left: 20px;
 }
 
-.Home-Text {
-  font-weight: 700;
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgb(0 0 0 / 90%), rgb(68 68 68 / 35%)),
+  url(../src/images/home_bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+
+.home .content {
+  max-width: 60rem;
+}
+
+.home .content h3{
+  margin-left: 50px;
+  font-size: 76px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.home .content p{
+  margin-left: 50px;
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #eee;
+}
+
+.home span {
+  color: red;
+  text-transform: uppercase;
+}
+
+#rcpbtn {
+  margin-left: 50px;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 0px;
+  font-size: 24px;
+  color: #fff;
+  background: red;
+  cursor: pointer;
+}
+
