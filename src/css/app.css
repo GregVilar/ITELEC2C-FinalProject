@@ -1,0 +1,14 @@
+@import './sass/custom.css';
+@import './recipeList.css';
+@import './recipe.css';
+@import './recipeEdit.css';
+@import './ingredientList.css';
+@import './ingredientEdit.css';
+@import './header.css';
+
+
+
+
+body {
+    background-color: var(--bs-primary);
+}

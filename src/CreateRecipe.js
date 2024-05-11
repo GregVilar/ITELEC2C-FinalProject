@@ -1,9 +1,18 @@
 import React from "react";
+import RecipeList from "./components/RecipeList";
+import "./css/app.css";
+import AppContext from "./components/AppContext";
+import RecipeEditContainer from "./components/RecipeEditContainer";
+import Header from "./components/Header";
 
 const CreateRecipe = () => {
   return (
     <div>
-      <h1>Create Customized Recipes</h1>
+      <AppContext>
+        <Header />
+        <RecipeList />
+        <RecipeEditContainer />
+      </AppContext>{" "}
     </div>
   );
 };
