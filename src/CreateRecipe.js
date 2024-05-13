@@ -7,7 +7,7 @@ import Header from "./components/Header";
 
 const CreateRecipe = () => {
   return (
-    <div>
+    <div className="cr-bg">
       <AppContext>
         <Header />
         <RecipeList />

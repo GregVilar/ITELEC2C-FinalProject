@@ -1,26 +1,22 @@
-import React from 'react';
-import Recipe from './Recipe';
-import { useRecipeContext } from './AppContext';
+import React from "react";
+import Recipe from "./Recipe";
+import { useRecipeContext } from "./AppContext";
 
 export default function RecipeList() {
-    const { recipes, handleRecipeAdd }  = useRecipeContext()
+  const { recipes, handleRecipeAdd } = useRecipeContext();
   return (
-    <div className="recipe-list">
-        {recipes.map((recipe) => {
-            return(
-                <Recipe key={recipe.id} {...recipe} />
-                
+    <div>
+      <div className="recipe-butt">
+        <button className="button-64" onClick={() => handleRecipeAdd()}>
+          <span class="text">Add Your Own Byte</span>
+        </button>
+      </div>
 
-            )
+      <div className="recipe-list d-flex flex-row ">
+        {recipes.map((recipe) => {
+          return <Recipe key={recipe.id} {...recipe} />;
         })}
-        <div className="recipe-list__add-recipe-btn-container text-center">
-            <button 
-            className="btn btn-success mb-5 recipe-list__add-recipe-btn"
-            onClick={() => handleRecipeAdd()}
-            >
-                Add Recipe
-            </button>
-        </div>
+      </div>
     </div>
-  )
+  );
 }

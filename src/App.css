@@ -16,21 +16,54 @@ a.navbar-brand {
   margin-left: 20px;
 }
 
+.header-create {
+  font-weight: 700;
+  font-size: 50px;
+  color: white;
+  margin-left: 140px;
+  padding-top: 50px;
+}
+.recipe-butt {
+  margin-left: 800px;
+  margin-top: -90px;
+}
+.recipe-list-l {
+  border: #fff;
+  width: 500px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center; /* Horizontally centers the child elements */
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+  margin-top: 30px;
+  margin-left: -680px;
+  border: #eee;
+  border-style: solid;
+}
+
+.recipe-cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap if they exceed the container's width */
+}
 .home {
   min-height: 100vh;
   display: flex;
   align-items: center;
   background: linear-gradient(90deg, rgb(0 0 0 / 90%), rgb(68 68 68 / 35%)),
-  url(../src/images/home_bg.png) no-repeat;
+    url(../src/images/home_bg.png) no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+.cr-bg {
+  background: url(../src/images/home_bg.png) no-repeat;
+  background-size: 5000px;
+  background-position: center;
+}
 .home .content {
   max-width: 60rem;
 }
 
-.home .content h3{
+.home .content h3 {
   margin-left: 50px;
   font-size: 76px;
   font-weight: bold;
@@ -38,7 +71,7 @@ a.navbar-brand {
   color: #fff;
 }
 
-.home .content p{
+.home .content p {
   margin-left: 50px;
   font-size: 2rem;
   font-weight: lighter;
@@ -63,4 +96,3 @@ a.navbar-brand {
   background: red;
   cursor: pointer;
 }
-
