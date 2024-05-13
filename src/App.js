@@ -16,11 +16,11 @@ function App() {
     <>
       <Router>
         <Navbars />
+        <SearchRecipe />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />;
           <Route path="/CreateRecipe" element={<CreateRecipe />} />;
-          <Route path="/SearchRecipe" element={<SearchRecipe />} />;
         </Routes>
       </Router>
     </>
