@@ -40,13 +40,6 @@ function Navbars() {
             >
               CreateRecipe
             </Link>
-            <Link
-              to="/SearchRecipe"
-              className="nav-link"
-              style={{ color: "white", marginRight: "150px" }}
-            >
-              SearchRecipe
-            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
