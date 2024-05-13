@@ -1,18 +1,28 @@
-import React from "react";
-import RecipeList from "./components/RecipeList";
-import "./css/app.css";
-import AppContext from "./components/AppContext";
-import RecipeEditContainer from "./components/RecipeEditContainer";
-import Header from "./components/Header";
+import React, { useState } from "react";
+import "./App.css";
+import RecipeCreate from "./RecipeCreate";
+import RecipeList from "./RecipeList";
+import RecipeData from "./RecipeData";
 
 const CreateRecipe = () => {
+  // Move the useState hook inside the functional component
+  const [recipes, setRecipes] = useState(RecipeData);
+
+  const addRecipe = (recipe) => {
+    setRecipes([...recipes, recipe]);
+  };
+
+  const deleteRecipe = (index) => {
+    setRecipes(recipes.filter((_, i) => i !== index));
+  };
+
   return (
-    <div className="cr-bg">
-      <AppContext>
-        <Header />
-        <RecipeList />
-        <RecipeEditContainer />
-      </AppContext>{" "}
+    <div className="App">
+      <header>
+        <h1>Delicious Food Recipes</h1>
+      </header>
+      <RecipeList recipes={recipes} deleteRecipe={deleteRecipe} />
+      <RecipeCreate addRecipe={addRecipe} />
     </div>
   );
 };
