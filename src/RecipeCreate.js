@@ -9,6 +9,8 @@ function RecipeCreate({ addRecipe }) {
     preparation: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setRecipe({ ...recipe, [name]: value });
@@ -29,21 +31,46 @@ function RecipeCreate({ addRecipe }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addRecipe(recipe);
-    setRecipe({
-      name: "",
-      cuisine: "",
-      photo: "",
-      ingredients: "",
-      preparation: "",
-    });
+
+    const newErrors = {};
+
+    if (!recipe.name) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!recipe.cuisine) {
+      newErrors.cuisine = "Cuisine is required";
+    }
+
+    if (!recipe.ingredients) {
+      newErrors.ingredients = "Ingredients are required";
+    }
+
+    if (!recipe.preparation) {
+      newErrors.preparation = "Preparation is required";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      addRecipe(recipe);
+      setRecipe({
+        name: "",
+        cuisine: "",
+        photo: "",
+        ingredients: "",
+        preparation: "",
+      });
+      setErrors({});
+    }
   };
 
   return (
     <div className="recipe-create">
       <form name="create" onSubmit={handleSubmit}>
         <div className="create-input-container sketchy1">
-          <div className="half-input">
+          <div className="input-container half-input">
+            {errors.name && <div className="error-bubble">{errors.name}</div>}
             <input
               className="input__field"
               name="name"
@@ -54,7 +81,10 @@ function RecipeCreate({ addRecipe }) {
             />
           </div>
 
-          <div className="half-input">
+          <div className="input-container half-input">
+            {errors.cuisine && (
+              <div className="error-bubble">{errors.cuisine}</div>
+            )}
             <input
               className="input__field"
               name="cuisine"
@@ -65,7 +95,7 @@ function RecipeCreate({ addRecipe }) {
             />
           </div>
 
-          <div className="half-input">
+          <div className="input-container half-input">
             <input
               className="input__field"
               name="photo"
@@ -75,21 +105,31 @@ function RecipeCreate({ addRecipe }) {
             />
           </div>
 
-          <textarea
-            className="input__field"
-            name="ingredients"
-            value={recipe.ingredients}
-            onChange={handleChange}
-            placeholder="Ingredients"
-          />
+          <div className="input-container">
+            {errors.ingredients && (
+              <div className="error-bubble">{errors.ingredients}</div>
+            )}
+            <textarea
+              className="input__field"
+              name="ingredients"
+              value={recipe.ingredients}
+              onChange={handleChange}
+              placeholder="Ingredients"
+            />
+          </div>
 
-          <textarea
-            className="input__field"
-            name="preparation"
-            value={recipe.preparation}
-            onChange={handleChange}
-            placeholder="Preparation"
-          />
+          <div className="input-container">
+            {errors.preparation && (
+              <div className="error-bubble">{errors.preparation}</div>
+            )}
+            <textarea
+              className="input__field"
+              name="preparation"
+              value={recipe.preparation}
+              onChange={handleChange}
+              placeholder="Preparation"
+            />
+          </div>
 
           <button type="submit" className="button-56">
             Create

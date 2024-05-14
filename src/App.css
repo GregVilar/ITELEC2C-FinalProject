@@ -325,7 +325,7 @@ p {
   border-radius: 4% 8% 8% 6% / 1% 1% 2% 4%;
 
   background: rgb(65, 64, 64);
-  margin-bottom: 900px;
+  margin-bottom: 300px;
 }
 
 .input {
@@ -409,4 +409,21 @@ h1.search-title {
     width: auto; /* Set image width to fill container */
     height: auto; /* Maintain aspect ratio */
   }
+}
+
+.error-bubble {
+  position: absolute;
+  background-color: #ffcccc;
+  color: #a94442;
+  padding: 6px;
+  border: 1px solid #a94442;
+  border-radius: 5px;
+  top: -40px;
+  left: 7px;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.input-container {
+  position: relative;
 }
