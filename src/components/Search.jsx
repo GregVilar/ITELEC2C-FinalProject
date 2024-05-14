@@ -1,57 +1,58 @@
-import React from "react";
-import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+import styled from 'styled-components'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 function Search() {
-  const navigate = useNavigate();
-  const [input, setInput] = useState("");
+  const navigate = useNavigate()
+  const [input, setInput] = useState("")
   const submitHandler = (e) => {
-    e.preventDefault();
-    navigate("/searched/" + input);
-    setInput("");
-  };
+    e.preventDefault()
+    navigate('/searched/' + input)
+    setInput("")
+  }
+
+
   return (
     <FormStyle onSubmit={submitHandler}>
       <div>
-        <FaSearch />
-        <input
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}
-          type="text"
-          value={input}
-        />
+        <input onChange={(e) => { setInput(e.target.value) }} type="text" value={input} />
       </div>
     </FormStyle>
-  );
+  )
 }
 
+
 const FormStyle = styled.form`
-  max-width: 100%;
+  max-width: 600px;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+
+
   div {
     position: relative;
   }
+
+
   input {
     border: none;
-    background: linear-gradient(35deg, #494949, #313131);
-    font-size: 1.5rem;
-    color: white;
-    padding: 1rem 3rem;
+    background: linear-gradient(35deg, #FFFFFF, #A9A9A9);
+    font-size: 1.2rem;
+    color: black;
+    padding: 0.5rem 1rem;
     border-radius: 1rem;
     outline: none;
-    display: block; /* Add this to make the input a block element */
-    margin: 0 auto; /* Add this to center the input horizontally */
-    width: 80%; /* Adjust the width as needed */
-  }
+    width: 100%;
+    transition: all 0.3s ease;
 
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    color: white;
-    transform: translate(100%, -50%);
+
+    &:focus {
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
   }
-`;
-export default Search;
+`
+
+
+export default Search

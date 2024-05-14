@@ -1,7 +1,9 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import styled from "styled-components";
+import React from 'react'
+import { useEffect, useState } from 'react'
+import { useParams, Link } from "react-router-dom"
+import styled from 'styled-components'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css'
 
 function Searched() {
   const [searched, setSearched] = useState([]);
@@ -9,54 +11,69 @@ function Searched() {
 
   useEffect(() => {
     getRequests(params.search);
-  }, [params.search]);
+  }, [params.search])
 
   const getRequests = async (name) => {
-    const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=5b943e5d6d514773afc1584eb3ecef61&query=${name}`
-    );
+    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=5e01b415916a469faa335bc14d6ebd57&query=${name}`);
     const dat = await data.json();
     setSearched(dat.results);
     console.log(dat);
-  };
+  }
+
   return (
     <div>
       {searched !== undefined && (
-        <Grid>
+        <Splide options={{
+          perPage: 3,
+          arrows: false,
+          pagination: false,
+          drag: "free",
+          gap: "1rem"
+        }}>
           {searched.map((el) => {
             return (
-              <Link to={"/recipe/" + el.id}>
-                <Card key={el.id}>
-                  <img src={el.image} alt={el.title} />
-                  <h4>{el.title}</h4>
-                </Card>
-              </Link>
+              <SplideSlide key={el.id}>
+                <Link to={"/recipe/" + el.id}>
+                  <Card>
+                    <img src={el.image} alt={el.title} />
+                    <h4>{el.title}</h4>
+                  </Card>
+                </Link>
+              </SplideSlide>
             );
           })}
-        </Grid>
+        </Splide>
       )}
+
       {searched === undefined && (
-        <h1 style={{ textAlign: "center" }}>
-          Oops, something wrong with your network!!!
-        </h1>
+        <h1 style={{ textAlign: "center" }}>Oops, something wrong with your network!!!</h1>
       )}
     </div>
-  );
+  )
 }
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  grid-gap: 3rem;
-`;
-
 const Card = styled.div`
-  max-height: 30rem;
-  overflow: hidden;
   border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 20rem;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
   img {
     border-radius: 2rem;
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
   }
+
   a {
     text-decoration: none;
   }
@@ -64,6 +81,14 @@ const Card = styled.div`
   h4 {
     text-align: center;
     padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 0 0 2rem 2rem;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 `;
 
