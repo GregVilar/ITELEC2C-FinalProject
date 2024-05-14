@@ -8,6 +8,7 @@ import { GiKnifeFork } from "react-icons/gi";
 function App() {
   return (
     <div className="App">
+      <h1 className="search-title">Search Recipes</h1>
       <Nav></Nav>
       <Search />
       <Category />

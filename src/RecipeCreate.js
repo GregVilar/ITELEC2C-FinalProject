@@ -14,6 +14,19 @@ function RecipeCreate({ addRecipe }) {
     setRecipe({ ...recipe, [name]: value });
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setRecipe({ ...recipe, photo: reader.result });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addRecipe(recipe);
@@ -56,10 +69,9 @@ function RecipeCreate({ addRecipe }) {
             <input
               className="input__field"
               name="photo"
-              type="text"
-              value={recipe.photo}
-              onChange={handleChange}
-              placeholder="Photo URL"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
             />
           </div>
 

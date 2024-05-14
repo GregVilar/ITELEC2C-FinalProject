@@ -21,7 +21,7 @@ function Navbars() {
             height="30"
             className="d-inline-block align-top"
           />
-          Romiamantic
+          Bite Byte
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -36,7 +36,7 @@ function Navbars() {
             <Link
               to="/CreateRecipe"
               className="nav-link"
-              style={{ color: "white", marginRight: "20px" }}
+              style={{ color: "white", marginRight: "170px" }}
             >
               CreateRecipe
             </Link>

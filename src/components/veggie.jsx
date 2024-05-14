@@ -1,44 +1,44 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useState, useEffect } from 'react'
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import { Link } from 'react-router-dom'
-import '@splidejs/react-splide/css'
-
+import React from "react";
+import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Link } from "react-router-dom";
+import "@splidejs/react-splide/css";
 
 function Veggie() {
-  const [veggie, setVeggie] = useState([])
-
+  const [veggie, setVeggie] = useState([]);
 
   useEffect(() => {
-    makeRequest()
-  }, [])
-
+    makeRequest();
+  }, []);
 
   const makeRequest = async () => {
-    const check = localStorage.getItem('veggie')
+    const check = localStorage.getItem("veggie");
     if (check) {
-      setVeggie(JSON.parse(check))
+      setVeggie(JSON.parse(check));
     } else {
-      const data = await fetch('https://api.spoonacular.com/recipes/random?apiKey=5e01b415916a469faa335bc14d6ebd57&tags=vegetarian')
-      const dat = await data.json()
-      localStorage.setItem('veggie', JSON.stringify(dat.recipes))
-      setVeggie(dat.recipes)
+      const data = await fetch(
+        "https://api.spoonacular.com/recipes/random?apiKey=5e01b415916a469faa335bc14d6ebd57&tags=vegetarian"
+      );
+      const dat = await data.json();
+      localStorage.setItem("veggie", JSON.stringify(dat.recipes));
+      setVeggie(dat.recipes);
     }
-  }
-
+  };
 
   return (
     <div>
       <Wrapper>
-        <h2>Veggie Picks</h2>
-        <Splide options={{
-          perPage: 2,
-          arrows: false,
-          pagination: false,
-          drag: "free",
-          gap: "2rem"
-        }}>
+        <h2 className="popular-title">Veggie Picks</h2>
+        <Splide
+          options={{
+            perPage: 2,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "2rem",
+          }}
+        >
           {veggie.map((recipe) => (
             <SplideSlide key={recipe.title}>
               <Link to={"/recipe/" + recipe.id}>
@@ -53,16 +53,14 @@ function Veggie() {
         </Splide>
       </Wrapper>
     </div>
-  )
+  );
 }
-
 
 const Wrapper = styled.div`
   margin: 2rem 0rem;
   max-width: 1000px;
   margin: 0 auto;
-`
-
+`;
 
 const Card = styled.div`
   position: relative;
@@ -71,28 +69,24 @@ const Card = styled.div`
   min-height: 250px;
   margin-bottom: 2rem;
 
-
   img {
     width: 100%;
     height: auto;
     border-radius: 2rem;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
   }
-
 
   &:hover img {
     transform: scale(1.1);
   }
-`
-
+`;
 
 const Gradient = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-`
-
+`;
 
 const Title = styled.p`
   position: absolute;
@@ -107,7 +101,6 @@ const Title = styled.p`
   font-size: 1.2rem;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.5);
-`
+`;
 
-
-export default Veggie
+export default Veggie;

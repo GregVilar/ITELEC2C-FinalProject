@@ -10,7 +10,7 @@ const Home = () => {
         </h3>
         <p>Where every click is a culinary adventure..</p>
         <a href={<SearchRecipe />} className="btn" id="rcpbtn">
-          VIEW RECIPES
+          SEARCH RECIPES
         </a>
       </div>
     </section>
