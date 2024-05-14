@@ -29,9 +29,10 @@ function RecipeCreate({ addRecipe }) {
   return (
     <div className="recipe-create">
       <form name="create" onSubmit={handleSubmit}>
-        <div className="create-input-container">
+        <div className="create-input-container sketchy1">
           <div className="half-input">
             <input
+              className="input__field"
               name="name"
               type="text"
               value={recipe.name}
@@ -42,6 +43,7 @@ function RecipeCreate({ addRecipe }) {
 
           <div className="half-input">
             <input
+              className="input__field"
               name="cuisine"
               type="text"
               value={recipe.cuisine}
@@ -52,6 +54,7 @@ function RecipeCreate({ addRecipe }) {
 
           <div className="half-input">
             <input
+              className="input__field"
               name="photo"
               type="text"
               value={recipe.photo}
@@ -61,6 +64,7 @@ function RecipeCreate({ addRecipe }) {
           </div>
 
           <textarea
+            className="input__field"
             name="ingredients"
             value={recipe.ingredients}
             onChange={handleChange}
@@ -68,13 +72,16 @@ function RecipeCreate({ addRecipe }) {
           />
 
           <textarea
+            className="input__field"
             name="preparation"
             value={recipe.preparation}
             onChange={handleChange}
             placeholder="Preparation"
           />
 
-          <button type="submit">Create</button>
+          <button type="submit" className="button-56">
+            Create
+          </button>
         </div>
       </form>
     </div>
@@ -82,8 +89,3 @@ function RecipeCreate({ addRecipe }) {
 }
 
 export default RecipeCreate;
-
-
-
-
-

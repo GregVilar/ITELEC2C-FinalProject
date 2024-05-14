@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import SearchRecipe from "./SearchRecipe.js";
 const Home = () => {
   return (
     <section className="home" id="home">
@@ -8,12 +8,12 @@ const Home = () => {
         <h3>
           Serving up recipes <span>Byte by Byte</span>
         </h3>
-        <p>
-          Where every click is a culinary adventure..
-        </p>
-        <a href="#" className="btn" id="rcpbtn">VIEW RECIPES</a>
+        <p>Where every click is a culinary adventure..</p>
+        <a href={<SearchRecipe />} className="btn" id="rcpbtn">
+          VIEW RECIPES
+        </a>
       </div>
-      </section>
+    </section>
   );
 };
 

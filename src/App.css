@@ -17,34 +17,6 @@ a.navbar-brand {
   margin-left: 20px;
 }
 
-.header-create {
-  font-weight: 700;
-  font-size: 50px;
-  color: white;
-  margin-left: 140px;
-  padding-top: 50px;
-}
-.recipe-butt {
-  margin-left: 800px;
-  margin-top: -90px;
-}
-.recipe-list-l {
-  border: #fff;
-  width: 500px;
-  font-size: 14px;
-  display: flex;
-  justify-content: center; /* Horizontally centers the child elements */
-  overflow-x: auto; /* Enables horizontal scrolling if needed */
-  margin-top: 30px;
-  margin-left: -680px;
-  border: #eee;
-  border-style: solid;
-}
-
-.recipe-cards-container {
-  display: flex;
-  flex-wrap: wrap; /* Allows cards to wrap if they exceed the container's width */
-}
 .home {
   min-height: 100vh;
   display: flex;
@@ -55,7 +27,7 @@ a.navbar-brand {
   background-position: center;
 }
 
-.cr-bg {
+.cr-bg1 {
   background: url(../src/images/home_bg.png) no-repeat;
   background-size: 5000px;
   background-position: center;
@@ -100,7 +72,16 @@ a.navbar-brand {
 
 header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
+
+  font-size: 64px;
+  margin-left: 50px;
+  padding-top: 50px;
+  margin-bottom: 70px;
+}
+
+.h1-create {
+  font-size: 80px;
+  color: #eee8aa;
 }
 
 h1 {
@@ -120,6 +101,7 @@ thead th {
   font-family: "Rock Salt";
   letter-spacing: 2px;
   padding: 10px;
+  color: white;
 }
 
 td {
@@ -127,6 +109,7 @@ td {
   font-size: 12px;
   padding: 10px;
   text-align: center;
+  color: white;
 }
 
 .content_td p {
@@ -137,7 +120,6 @@ td {
 }
 
 img {
-  width: 100%;
   height: auto;
   object-fit: scale-down;
 }
@@ -148,12 +130,13 @@ label {
 }
 
 .recipe-create {
-  background-color: #fff0c7;
+  background-color: black;
   padding: 10px;
 }
 
 .create-input-container {
   display: flex;
+  padding: 20px;
 }
 
 .create-input-container input,
@@ -163,5 +146,221 @@ label {
 }
 
 tr.header-row {
-  background-color: white;
+  background-color: black;
+}
+
+.header-txt-create {
+  font-size: 30px;
+}
+
+.header-row {
+  font-size: 30px;
+  text-align: center;
+}
+
+.half-input {
+  font-size: 20px;
+}
+
+.content_td {
+  font-size: 15px;
+  text-align: center;
+}
+.content_td1 {
+  font-size: 20px;
+}
+
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: darkslategray;
+
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+.button-55 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: orangered;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-56 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: darkgreen;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-55:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+.bttn-54pos {
+  margin-top: 10px;
+  margin-left: 1370px;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  display: grid;
+  place-content: center;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.5rem, 1rem + 18vw, 15rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.wrapper > div {
+  grid-area: 1/1/-1/-1;
+}
+.top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+.bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background: linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+}
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 120px;
+  text-transform: uppercase;
+  font-family: "Gambetta", serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: #eee8aa;
+  outline: none;
+  text-align: center;
+}
+
+h1:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 150%;
+  text-align: center;
+  color: MintCream;
+  letter-spacing: 0.5px;
+}
+
+.sketchy {
+  border: 3px solid white;
+
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+
+  background: black;
+}
+
+.sketchy1 {
+  border: 3px solid white;
+
+  border-radius: 4% 8% 8% 6% / 1% 1% 2% 4%;
+
+  background: black;
+}
+
+.input {
+  position: relative;
+}
+
+.input__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
+  margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
+  background: pink;
+  white-space: nowrap;
+  transform: translate(0, 0);
+  transform-origin: 0 0;
+  background: var(--color-background);
+  transition: transform 120ms ease-in;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.input__field {
+  box-sizing: border-box;
+  display: block;
+  width: 80%;
+  border: 3px solid grey;
+  padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+  color: black;
+  background: white;
+  border-radius: var(--size-radius);
+}
+
+.input__field:focus,
+.input__field:not(:placeholder-shown) {
+  ~ .input__label {
+    transform: translate(0.25rem, -65%) scale(0.8);
+    color: var(--color-accent);
+  }
 }
