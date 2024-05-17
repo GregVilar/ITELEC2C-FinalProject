@@ -1,9 +1,9 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import { useParams, Link } from "react-router-dom"
-import styled from 'styled-components'
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import '@splidejs/react-splide/css'
+import React from "react";
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import styled from "styled-components";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 function Searched() {
   const [searched, setSearched] = useState([]);
@@ -11,25 +11,29 @@ function Searched() {
 
   useEffect(() => {
     getRequests(params.search);
-  }, [params.search])
+  }, [params.search]);
 
   const getRequests = async (name) => {
-    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=5e01b415916a469faa335bc14d6ebd57&query=${name}`);
+    const data = await fetch(
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=3515191ef66d419baacfd269e5450414&query=${name}`
+    );
     const dat = await data.json();
     setSearched(dat.results);
     console.log(dat);
-  }
+  };
 
   return (
     <div>
       {searched !== undefined && (
-        <Splide options={{
-          perPage: 3,
-          arrows: false,
-          pagination: false,
-          drag: "free",
-          gap: "1rem"
-        }}>
+        <Splide
+          options={{
+            perPage: 3,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "1rem",
+          }}
+        >
           {searched.map((el) => {
             return (
               <SplideSlide key={el.id}>
@@ -46,10 +50,12 @@ function Searched() {
       )}
 
       {searched === undefined && (
-        <h1 style={{ textAlign: "center" }}>Oops, something wrong with your network!!!</h1>
+        <h1 style={{ textAlign: "center" }}>
+          Oops, something wrong with your network!!!
+        </h1>
       )}
     </div>
-  )
+  );
 }
 
 const Card = styled.div`

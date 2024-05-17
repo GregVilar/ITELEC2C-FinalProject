@@ -16,7 +16,7 @@ function Navbars() {
           {" "}
           <img
             alt=""
-            src="./images/bigbyte.jpg"
+            src="https://i.ibb.co/dtjv7LM/e.png"
             width="30"
             height="30"
             className="d-inline-block align-top"

@@ -107,7 +107,8 @@ a:hover {
   color: #f27121;
 }
 body {
-  background-image: url("./images/recipe.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/recipe.jpg");
   background-size: cover;
   background-position: bottom 50;
 }

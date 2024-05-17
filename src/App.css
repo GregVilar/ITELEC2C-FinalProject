@@ -325,7 +325,7 @@ p {
   border-radius: 4% 8% 8% 6% / 1% 1% 2% 4%;
 
   background: rgb(65, 64, 64);
-  margin-bottom: 300px;
+  margin-bottom: 60px;
 }
 
 .input {
@@ -387,6 +387,10 @@ h1.search-title {
     width: 100%;
   }
 
+  .input__field {
+    width: 100%;
+  }
+
   /* Adjust table width and cell padding/font size */
   table {
     width: 100%;
@@ -399,9 +403,8 @@ h1.search-title {
   }
 
   .button-56 {
-    width: 40%;
-
-    margin-left: 75px;
+    width: 20%;
+    align-self: center;
   }
 
   /* Adjust image width */

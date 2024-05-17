@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import '@splidejs/react-splide/css'
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 function Cusine() {
   const params = useParams();
   const [cuisine, setCuisine] = useState([]);
   const getRequests = async (name) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=5e01b415916a469faa335bc14d6ebd57&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=3515191ef66d419baacfd269e5450414&cuisine=${name}`
     );
     const dat = await data.json();
     console.log(dat.results);
@@ -29,13 +29,15 @@ function Cusine() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Splide options={{
-            perPage: 3,
-            arrows: false,
-            pagination: false,
-            drag: "free",
-            gap: "1rem"
-          }}>
+          <Splide
+            options={{
+              perPage: 3,
+              arrows: false,
+              pagination: false,
+              drag: "free",
+              gap: "1rem",
+            }}
+          >
             {cuisine.map((el) => {
               return (
                 <SplideSlide key={el.id}>
